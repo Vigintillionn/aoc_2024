@@ -1,0 +1,8 @@
+[package]
+name = "p2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+util = { path = "../util" }
+regex = "1.11.1"
