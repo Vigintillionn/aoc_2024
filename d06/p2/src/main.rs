@@ -78,7 +78,7 @@ fn traverse_with_obstacle(
       updated_walls.insert(next_pos);
       checked_positions.insert(next_pos);
   
-      let (final_position, _) = traverse(grid_size, &updated_walls, guard, HashSet::new());
+      let (final_position, _) = traverse(grid_size, &updated_walls, current_guard, visited_positions.clone());
       if guard_in_bounds(grid_size, final_position.0) {
         successful_steps += 1;
       }
