@@ -43,19 +43,19 @@ fn find_antinodes(width: usize, height: usize, antennas: HashMap<char, Vec<Point
       // value. If the y-axis value is within the grid, we add it to the
       // antinodes set. 
       if m.1 == 0 {     
-        for ay in 0..bottom_right.0 {
-          antinodes.insert((ay, l.1));
+        for y in 0..bottom_right.0 {
+          antinodes.insert((y, l.1));
         }
       } else {
         // Otherwise, we iterate over the y-axis and calculate the
         // corresponding x-axis value. If the x-axis value is within the
         // grid, we add it to the antinodes set.
-        for ax in 0..bottom_right.1 {
-          let p = (m.0 * ax as isize + b.0, m.1);
+        for x in 0..bottom_right.1 {
+          let p = (m.0 * x as isize + b.0, m.1);
           if p.0 % p.1 == 0 {
-            let ay = (p.0 / p.1) as usize;
-            if ay < bottom_right.0 {
-              antinodes.insert((ay, ax));
+            let y = (p.0 / p.1) as usize;
+            if y < bottom_right.0 {
+              antinodes.insert((y, x));
             }
           }
         }
